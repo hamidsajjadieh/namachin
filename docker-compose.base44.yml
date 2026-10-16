@@ -1,0 +1,31 @@
+services:
+  web:
+    image: node:22-alpine
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - node_modules:/workspace/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - BASE44_PREVIEW_MODE
+      - BASE44_PUBLIC_HOST_SUFFIX
+      - BASE44_SANDBOX_HOST_DOMAIN
+      - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS
+      - CHOKIDAR_USEPOLLING=true
+    command:
+      [
+        "sh",
+        "-ec",
+        "npm install --no-audit --no-fund && exec npm run dev",
+      ]
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/"]
+      interval: 15s
+      timeout: 5s
+      retries: 6
+      start_period: 90s
+    restart: on-failure
+
+volumes:
+  node_modules:

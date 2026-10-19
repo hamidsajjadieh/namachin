@@ -40,3 +40,9 @@ html[lang='en'] {
   --font-head: 'Montserrat', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 }
+
+/* Persian pages render exclusively in the self-hosted IRANSans webfont */
+html[lang='fa'] {
+  --font-head: 'IRANSans', system-ui, sans-serif;
+  --font-body: 'IRANSans', system-ui, sans-serif;
+}

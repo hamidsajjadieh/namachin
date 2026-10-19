@@ -477,7 +477,9 @@ html[dir='rtl'] .logo__name small {
 .hero--video {
   min-block-size: 100vh; /* JS grows this into the scroll track */
   overflow: visible;     /* overflow:hidden would disable position:sticky */
-  place-items: start center; /* pin the view to the track's top, not center */
+  /* pin the view to the track's top (not vertically centered), and keep it
+     stretched to the FULL body width — never a narrow centered column */
+  place-items: start stretch;
 }
 
 .hero--video .hero__sticky {

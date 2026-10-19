@@ -23,7 +23,7 @@ const MIN_VH = 260;
 const MAX_VH = 400;
 const FADE_SPAN = 0.28;   // hero text fully faded at this scroll progress
 
-export default function ScrollHeroVideo({ src, poster, alt, children, footer }) {
+export default function ScrollHeroVideo({ src, srcFallback, poster, alt, children, footer }) {
   const sectionRef = useRef(null);
   const stickyRef = useRef(null);
   const wrapRef = useRef(null);
@@ -45,6 +45,7 @@ export default function ScrollHeroVideo({ src, poster, alt, children, footer }) 
     let started = false;      // video ready → allowed to scrub
     let snapped = false;      // initial snap to scroll position done
     let current = 0;          // smoothed video time (s)
+    let wasSettled = false;
     let lastNow = 0;
     let top = 0;              // cached: section top in document
     let track = 1;            // cached: scroll distance of the track
@@ -108,10 +109,18 @@ export default function ScrollHeroVideo({ src, poster, alt, children, footer }) 
         if (Math.abs(video.currentTime - current) > SEEK_EPS) {
           video.currentTime = current;
         }
+
+        // one exact seek the moment motion settles → precise start/end frames
+        const settled = Math.abs(targetTime - current) < SNAP_EPS;
+        if (settled && !wasSettled && Math.abs(video.currentTime - targetTime) > 0.004) {
+          video.currentTime = targetTime;
+        }
+        wasSettled = settled;
+
         fade(p);
         setHeroFlag(window.scrollY - top < track + window.innerHeight - 84 ? '1' : '');
 
-        if (Math.abs(targetTime - current) >= SNAP_EPS) {
+        if (!settled) {
           raf = requestAnimationFrame(tick); // keep converging
         }
       }
@@ -137,7 +146,15 @@ export default function ScrollHeroVideo({ src, poster, alt, children, footer }) 
       wake();
     };
 
+    let triedFallback = false;
     const onError = () => {
+      // primary source failed → try the alternate codec once
+      if (!triedFallback && srcFallback) {
+        triedFallback = true;
+        video.src = srcFallback;
+        video.load();
+        return;
+      }
       // poster image stays visible — hero remains functional (req. 18)
       wrap.classList.add('is-failed');
       started = false;
@@ -179,7 +196,7 @@ export default function ScrollHeroVideo({ src, poster, alt, children, footer }) 
       mq.removeEventListener('change', onMotionChange);
       setHeroFlag(null);
     };
-  }, [src]);
+  }, [src, srcFallback]);
 
   return (
     <section className="hero hero--video" ref={sectionRef}>

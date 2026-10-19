@@ -37,7 +37,8 @@ export default function Home() {
     <>
       {/* ---------- Hero: scroll-scrubbed 3D video ---------- */}
       <ScrollHeroVideo
-        src="/videos/hero-scroll.webm"
+        src="/videos/hero-scroll.mp4"
+        srcFallback="/videos/hero-scroll.webm"
         poster={IMG.hero}
         alt={t('home.heroTitle')}
         footer={

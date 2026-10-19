@@ -9,6 +9,7 @@ import Carousel from '../components/Carousel';
 import ProjectCard from '../components/ProjectCard';
 import TeamCard from '../components/TeamCard';
 import CtaSection from '../components/CtaSection';
+import ScrollHeroVideo from '../components/ScrollHeroVideo';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -34,27 +35,12 @@ export default function Home() {
 
   return (
     <>
-      {/* ---------- Hero ---------- */}
-      <section className="hero">
-        <div className="hero__bg">
-          <img src={IMG.hero} alt={t('home.heroTitle')} fetchpriority="high" />
-        </div>
-        <div className="hero__overlay" aria-hidden="true" />
-        <div className="container hero__content">
-          <p className="kicker hero__kicker">{t('home.heroKicker')}</p>
-          <h1 className="hero__title">{t('home.heroTitle')}</h1>
-          <p className="hero__sub">{t('home.heroSub')}</p>
-          <div className="hero__cta">
-            <Link className="btn btn--light" to={to('/products', lang)}>
-              {t('home.heroCta1')}
-              <ArrowRight size={16} className="icon-flip" />
-            </Link>
-            <Link className="btn btn--ghost-light" to={to('/contact', lang)}>
-              {t('home.heroCta2')}
-            </Link>
-          </div>
-        </div>
-        <div className="hero__badges">
+      {/* ---------- Hero: scroll-scrubbed 3D video ---------- */}
+      <ScrollHeroVideo
+        src="/videos/hero-scroll.webm"
+        poster={IMG.hero}
+        alt={t('home.heroTitle')}
+        footer={
           <div className="container hero__badges-inner">
             {t('home.badges').map((badge, i) => {
               const Icon = BADGE_ICONS[i];
@@ -66,8 +52,21 @@ export default function Home() {
               );
             })}
           </div>
+        }
+      >
+        <p className="kicker hero__kicker">{t('home.heroKicker')}</p>
+        <h1 className="hero__title">{t('home.heroTitle')}</h1>
+        <p className="hero__sub">{t('home.heroSub')}</p>
+        <div className="hero__cta">
+          <Link className="btn btn--light" to={to('/products', lang)}>
+            {t('home.heroCta1')}
+            <ArrowRight size={16} className="icon-flip" />
+          </Link>
+          <Link className="btn btn--ghost-light" to={to('/contact', lang)}>
+            {t('home.heroCta2')}
+          </Link>
         </div>
-      </section>
+      </ScrollHeroVideo>
 
       {/* ---------- Who we are ---------- */}
       <section className="section">

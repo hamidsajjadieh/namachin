@@ -101,7 +101,9 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    /* Stay transparent while the scroll-video hero is pinned on screen */
+    const onScroll = () =>
+      setScrolled(window.scrollY > 40 && !document.body.dataset.heroActive);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);

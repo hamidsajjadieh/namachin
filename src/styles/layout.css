@@ -472,6 +472,108 @@ html[dir='rtl'] .logo__name small {
 }
 
 /* ============================================================
+   Hero — scroll-scrubbed video (home)
+   ============================================================ */
+.hero--video {
+  min-block-size: 100vh; /* JS grows this into the scroll track */
+  overflow: visible;     /* overflow:hidden would disable position:sticky */
+  place-items: start center; /* pin the view to the track's top, not center */
+}
+
+.hero--video .hero__sticky {
+  position: sticky;
+  top: 0;
+  block-size: 100vh;
+  block-size: 100dvh; /* mobile browser chrome */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Poster (loading / error fallback) sits under the video */
+.hero--video .hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.hero--video .hero__bg img,
+.hero--video .hero__bg video {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+/* Video crossfade reveal — never show an empty rectangle */
+.hero--video .hero__bg--video {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.hero--video .hero__bg--video.is-ready {
+  opacity: 1;
+}
+
+.hero--video .hero__bg--video.is-failed {
+  display: none; /* poster image takes over */
+}
+
+/* Slim loading shimmer while the video buffers */
+.hero__loader {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+  block-size: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform-origin: inline-start;
+  animation: heroLoader 1.8s ease-in-out infinite;
+}
+
+@keyframes heroLoader {
+  0% {
+    transform: scaleX(0.05);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scaleX(0.05);
+    opacity: 0.4;
+  }
+}
+
+.is-ready .hero__loader,
+.is-failed .hero__loader {
+  display: none;
+}
+
+/* Thinner scrim over the video — keep text legible, video dominant */
+.hero--video .hero__overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 23, 41, 0.52) 0%,
+    rgba(10, 23, 41, 0.14) 45%,
+    rgba(10, 23, 41, 0.58) 100%
+  );
+}
+
+/* Wrappers faded by scroll (opacity set via JS, no transition) */
+.hero__fade {
+  inline-size: 100%;
+  will-change: opacity, transform;
+}
+
+.hero--video .hero__badges {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* ============================================================
    Page hero (inner pages)
    ============================================================ */
 .page-hero {

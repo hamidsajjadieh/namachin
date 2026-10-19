@@ -16,6 +16,18 @@ import Magazine from './pages/Magazine';
 import FacadeDesign from './pages/FacadeDesign';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import AdminShell from './admin/AdminShell';
+import AdminLayout from './admin/AdminLayout';
+import AdminLogin from './admin/pages/AdminLogin';
+import AdminDashboard from './admin/pages/AdminDashboard';
+import AdminProducts from './admin/pages/AdminProducts';
+import AdminCategories from './admin/pages/AdminCategories';
+import AdminListPage from './admin/pages/AdminListPage';
+import AdminMedia from './admin/pages/AdminMedia';
+import AdminTheme from './admin/pages/AdminTheme';
+import AdminOrders from './admin/pages/AdminOrders';
+import AdminMessages from './admin/pages/AdminMessages';
+import AdminUsers from './admin/pages/AdminUsers';
 
 function savedLang() {
   try {
@@ -73,6 +85,22 @@ export default function App() {
           <Route path="facade-design" element={<FacadeDesign />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
+        </Route>
+        {/* Admin CMS — own chrome (no site header/footer) */}
+        <Route path="/:lang/admin" element={<AdminShell />}>
+          <Route path="login" element={<AdminLogin />} />
+          <Route element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="products" element={<AdminProducts />} />
+            <Route path="categories" element={<AdminCategories />} />
+            <Route path="news" element={<AdminListPage kind="news" />} />
+            <Route path="media" element={<AdminMedia />} />
+            <Route path="announcements" element={<AdminListPage kind="announcements" />} />
+            <Route path="theme" element={<AdminTheme />} />
+            <Route path="orders" element={<AdminOrders />} />
+            <Route path="messages" element={<AdminMessages />} />
+            <Route path="users" element={<AdminUsers />} />
+          </Route>
         </Route>
         <Route path="*" element={<Navigate to={`/${DEFAULT_LANG}`} replace />} />
       </Routes>

@@ -13,6 +13,10 @@ services:
       - BASE44_SANDBOX_HOST_DOMAIN
       - __VITE_ADDITIONAL_SERVER_ALLOWED_HOSTS
       - CHOKIDAR_USEPOLLING=true
+      - API_PROXY_TARGET=http://api:4000
+    depends_on:
+      api:
+        condition: service_healthy
     command:
       [
         "sh",
@@ -27,5 +31,32 @@ services:
       start_period: 90s
     restart: on-failure
 
+  api:
+    image: node:22-bookworm-slim
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+      - api_node_modules:/app/node_modules
+      - api_data:/data
+    environment:
+      - PORT=4000
+      - DATA_DIR=/data
+      - UPLOADS_DIR=/data/uploads
+    command:
+      [
+        "sh",
+        "-ec",
+        "npm install --no-audit --no-fund && exec node server.js",
+      ]
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:4000/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 6
+      start_period: 60s
+    restart: on-failure
+
 volumes:
   node_modules:
+  api_node_modules:
+  api_data:

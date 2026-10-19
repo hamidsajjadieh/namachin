@@ -7,5 +7,11 @@ export default defineConfig({
     host: true,
     port: 3000,
     strictPort: true,
+    proxy: {
+      '/api': {
+        target: process.env.API_PROXY_TARGET || 'http://localhost:4000',
+        changeOrigin: true,
+      },
+    },
   },
 });

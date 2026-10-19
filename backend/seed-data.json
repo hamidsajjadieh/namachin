@@ -1,0 +1,312 @@
+{
+ "categories": [
+  {
+   "name": "آجرهای سفالی",
+   "slug": "fireclay"
+  },
+  {
+   "name": "آجرهای نسوز",
+   "slug": "refractory"
+  },
+  {
+   "name": "آجرهای تایل",
+   "slug": "tile"
+  },
+  {
+   "name": "آجرهای کف",
+   "slug": "floor"
+  },
+  {
+   "name": "آجرهای طرح‌دار",
+   "slug": "patterned"
+  },
+  {
+   "name": "قرمز",
+   "slug": "red",
+   "parent": "fireclay"
+  },
+  {
+   "name": "کرم",
+   "slug": "cream",
+   "parent": "fireclay"
+  },
+  {
+   "name": "شاموتی روشن",
+   "slug": "light-chamotte",
+   "parent": "refractory"
+  },
+  {
+   "name": "زرد",
+   "slug": "yellow",
+   "parent": "refractory"
+  },
+  {
+   "name": "خاکستری",
+   "slug": "gray",
+   "parent": "tile"
+  },
+  {
+   "name": "سفید",
+   "slug": "white",
+   "parent": "tile"
+  },
+  {
+   "name": "مشکی",
+   "slug": "black",
+   "parent": "floor"
+  }
+ ],
+ "products": [
+  {
+   "code": "NB-FC-101",
+   "name_fa": "آجر سفالی نما – قرمز کلاسیک",
+   "name_en": "Fireclay Facade Brick – Classic Red",
+   "name_ar": "آجر طيني للواجهات – أحمر كلاسيكي",
+   "group": "fireclay",
+   "color": "red",
+   "color_hex": "#9c4a3a",
+   "base_color": "قرمز کلاسیک",
+   "length": 240,
+   "width": 115,
+   "thickness": 52,
+   "absorption": "8",
+   "resistance": "4.2",
+   "image_url": "https://images.pexels.com/photos/1101125/pexels-photo-1101125.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "price": 980000,
+   "featured": true,
+   "sort": 0
+  },
+  {
+   "code": "NB-FC-102",
+   "name_fa": "آجر سفالی نما – کرم روشن",
+   "name_en": "Fireclay Facade Brick – Light Cream",
+   "name_ar": "آجر طيني للواجهات – كريمي فاتح",
+   "group": "fireclay",
+   "color": "cream",
+   "color_hex": "#d9c4a3",
+   "base_color": "کرم روشن",
+   "length": 240,
+   "width": 115,
+   "thickness": 52,
+   "absorption": "8.5",
+   "resistance": "4",
+   "image_url": "https://images.pexels.com/photos/4373152/pexels-photo-4373152.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "price": 1050000,
+   "featured": false,
+   "sort": 1
+  },
+  {
+   "code": "NB-FC-103",
+   "name_fa": "آجر سفالی نما – سفید صدفی",
+   "name_en": "Fireclay Facade Brick – Pearl White",
+   "name_ar": "آجر طيني للواجهات – أبيض صدفـي",
+   "group": "fireclay",
+   "color": "white",
+   "color_hex": "#e8e4dc",
+   "base_color": "سفید صدفی",
+   "length": 240,
+   "width": 115,
+   "thickness": 52,
+   "absorption": "7.5",
+   "resistance": "4.5",
+   "image_url": "https://images.pexels.com/photos/14181093/pexels-photo-14181093.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "price": 1250000,
+   "featured": true,
+   "sort": 2
+  },
+  {
+   "code": "NB-FC-104",
+   "name_fa": "آجر سفالی نما – خاکستری دودی",
+   "name_en": "Fireclay Facade Brick – Smoky Gray",
+   "name_ar": "آجر طيني للواجهات – رمادي دخاني",
+   "group": "fireclay",
+   "color": "gray",
+   "color_hex": "#9a9a96",
+   "base_color": "خاکستری دودی",
+   "length": 240,
+   "width": 115,
+   "thickness": 52,
+   "absorption": "8",
+   "resistance": "4.3",
+   "image_url": "https://images.pexels.com/photos/2463346/pexels-photo-2463346.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "price": 1150000,
+   "featured": false,
+   "sort": 3
+  },
+  {
+   "code": "NB-RF-201",
+   "name_fa": "آجر نسوز صنعتی – زغالی",
+   "name_en": "Industrial Refractory Brick – Charcoal",
+   "name_ar": "آجر حراري صناعي – فحمي",
+   "group": "refractory",
+   "color": "charcoal",
+   "color_hex": "#3a3a3a",
+   "base_color": "زغالی",
+   "length": 230,
+   "width": 114,
+   "thickness": 64,
+   "absorption": "5",
+   "resistance": "6",
+   "image_url": "https://images.pexels.com/photos/6102799/pexels-photo-6102799.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "price": 1680000,
+   "featured": true,
+   "sort": 4
+  },
+  {
+   "code": "NB-RF-202",
+   "name_fa": "آجر نسوز معماری – بژ دودی",
+   "name_en": "Architectural Refractory Brick – Smoky Beige",
+   "name_ar": "آجر حراري معماري – بيج دخاني",
+   "group": "refractory",
+   "color": "beige",
+   "color_hex": "#b9a284",
+   "base_color": "بژ دودی",
+   "length": 230,
+   "width": 114,
+   "thickness": 64,
+   "absorption": "5.5",
+   "resistance": "5.8",
+   "image_url": "https://images.pexels.com/photos/6205564/pexels-photo-6205564.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "price": 1740000,
+   "featured": false,
+   "sort": 5
+  },
+  {
+   "code": "NB-DP-301",
+   "name_fa": "آجر فشاری خشک – قرمز آجری",
+   "name_en": "Dry-Pressed Brick – Brick Red",
+   "name_ar": "آجر مضغوط جاف – أحمر آجري",
+   "group": "dryPressed",
+   "color": "red",
+   "color_hex": "#a85a44",
+   "base_color": "قرمز آجری",
+   "length": 240,
+   "width": 115,
+   "thickness": 71,
+   "absorption": "9",
+   "resistance": "3.8",
+   "image_url": "https://images.pexels.com/photos/9843688/pexels-photo-9843688.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "price": 890000,
+   "featured": false,
+   "sort": 6
+  },
+  {
+   "code": "NB-DP-302",
+   "name_fa": "آجر فشاری خشک – مسی",
+   "name_en": "Dry-Pressed Brick – Copper",
+   "name_ar": "آجر مضغوط جاف – نحاسي",
+   "group": "dryPressed",
+   "color": "copper",
+   "color_hex": "#93552f",
+   "base_color": "مسی",
+   "length": 240,
+   "width": 115,
+   "thickness": 71,
+   "absorption": "9.2",
+   "resistance": "3.9",
+   "image_url": "https://images.pexels.com/photos/17391841/pexels-photo-17391841.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "price": 1120000,
+   "featured": false,
+   "sort": 7
+  },
+  {
+   "code": "NB-TL-401",
+   "name_fa": "آجر تایل نما – فیروزه‌ای",
+   "name_en": "Facade Brick Tile – Turquoise",
+   "name_ar": "بلاط آجر للواجهات – فيروزي",
+   "group": "tile",
+   "color": "turquoise",
+   "color_hex": "#3f9ea8",
+   "base_color": "فیروزه‌ای",
+   "length": 295,
+   "width": 295,
+   "thickness": 14,
+   "absorption": "3.5",
+   "resistance": "7.5",
+   "image_url": "https://images.pexels.com/photos/8274744/pexels-photo-8274744.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "price": 1490000,
+   "featured": true,
+   "sort": 8
+  },
+  {
+   "code": "NB-TL-402",
+   "name_fa": "آجر تایل نما – سفید مات",
+   "name_en": "Facade Brick Tile – Matte White",
+   "name_ar": "بلاط آجر للواجهات – أبيض مطفي",
+   "group": "tile",
+   "color": "white",
+   "color_hex": "#eeeadf",
+   "base_color": "سفید مات",
+   "length": 295,
+   "width": 295,
+   "thickness": 14,
+   "absorption": "4",
+   "resistance": "7.2",
+   "image_url": "https://images.pexels.com/photos/13088162/pexels-photo-13088162.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "price": 1320000,
+   "featured": false,
+   "sort": 9
+  },
+  {
+   "code": "NB-FL-501",
+   "name_fa": "آجر فرش کف – خاکستری روشن",
+   "name_en": "Floor Brick – Light Gray",
+   "name_ar": "آجر الأرضيات – رمادي فاتح",
+   "group": "floor",
+   "color": "gray",
+   "color_hex": "#b3aca0",
+   "base_color": "خاکستری روشن",
+   "length": 200,
+   "width": 200,
+   "thickness": 40,
+   "absorption": "6",
+   "resistance": "5.5",
+   "image_url": "https://images.pexels.com/photos/36268947/pexels-photo-36268947.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "price": 760000,
+   "featured": false,
+   "sort": 10
+  },
+  {
+   "code": "NB-PT-601",
+   "name_fa": "آجر طرح‌دار گل‌میخ – زغالی",
+   "name_en": "Patterned Pin Brick – Charcoal",
+   "name_ar": "آجر مزخرف منقوش – فحمي",
+   "group": "patterned",
+   "color": "charcoal",
+   "color_hex": "#4a4a46",
+   "base_color": "زغالی",
+   "length": 240,
+   "width": 115,
+   "thickness": 52,
+   "absorption": "8.2",
+   "resistance": "4.4",
+   "image_url": "https://images.pexels.com/photos/11661021/pexels-photo-11661021.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "price": 1580000,
+   "featured": true,
+   "sort": 11
+  }
+ ],
+ "news": [
+  {
+   "title_fa": "راهنمای انتخاب آجر نما برای اقلیم‌های سرد",
+   "cover_url": "https://images.pexels.com/photos/7031405/pexels-photo-7031405.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "excerpt_fa": "چرخه یخ‌زدگی و آب‌شدگی، سخت‌ترین آزمایش برای نمای ساختمان است. این راهنما به شما کمک می‌کند آجری انتخاب کنید که زمستان را دوست دارد.",
+   "body_fa": "در اقلیم‌های سرد، مهم‌ترین شاخص فنی آجر نما، جذب آب و مقاومت در برابر یخ‌زدگی است. آجری که بیش از حد مجاز آب جذب می‌کند، با هر چرخه یخ‌زدگی و آب‌شدگی کمی متورم می‌شود و پس از چند زمستان، ترک‌های مویی روی نما نمایان می‌گردد.\n\nبرای چنین اقلیم‌هایی به دنبال آجری با جذب آب زیر ۸ درصد و تضمین مقاومت در برابر یخ‌زدگی بگردید. آجرهای نسوز به دلیل پخت در دمای بالاتر و تخلخل کمتر، عملکرد بی‌نظیری در برابر چرخه یخ‌زدگی دارند و برای مناطق کوهستانی انتخاب اول مهندسان هستند.\n\nفراموش نکنید که اجرای صحیح به اندازه خود آجر مهم است: ملات با نسبت درست، درزپوشی کامل و نبود حفره پشت آجر، شرط طول عمر نما در برف و باران است. تیم اجرایی نماچین در پروژه‌های اقلیم سرد، از ملات ویژه و درزهای آب‌بندی‌شده استفاده می‌کند.",
+   "date": "2026-08-18"
+  },
+  {
+   "title_fa": "ترندهای طراحی نما در ۲۰۲۶",
+   "cover_url": "https://images.pexels.com/photos/32666364/pexels-photo-32666364.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "excerpt_fa": "از آجر سفید مات تا چیدمان شبکه‌ای تایل‌ها؛ نگاهی به مسیری که معماران نما در سال جدید پیش گرفته‌اند.",
+   "body_fa": "سال ۲۰۲۶ سال بازگشت ماده به نماست. معماران از پوسته‌های براق و شیشه‌ای فاصله می‌گیرند و به سمت سطوح مات، بافت‌دار و طبیعی حرکت می‌کنند؛ آجر سفید مات و خاکستری دودی در این میان ستاره‌های سال هستند.\n\nچیدمان شبکه‌ای تایل‌های بزرگ‌مقیاس، فاصله‌های یکنواخت و درزهای ظریف، زبان مشترک پروژه‌های پریمیوم امسال است. ترکیب آجر با چوب ترمووود و بتن اکسپوز نیز ترندی است که در پروژه‌های ویلایی و مجتمع‌های کوچک دیده می‌شود.\n\nهوشمندشدن نما نیز ادامه دارد: همراه‌کردن آجر با عایق حرارتی، بار حرارتی ساختمان را کاهش می‌دهد و با مقررات انرژی هم‌راستاست. آجرهای نماچین با جذب آب پایین و پایداری رنگ، زیرساخت مناسبی برای همین اهداف هستند.",
+   "date": "2026-09-22"
+  },
+  {
+   "title_fa": "تفاوت آجر سفالی و نسوز؛ کدام برای پروژه شما؟",
+   "cover_url": "https://images.pexels.com/photos/12001528/pexels-photo-12001528.jpeg?auto=compress&cs=tinysrgb&w=1600",
+   "excerpt_fa": "هر دو از خاک می‌آیند، اما دو دنیای متفاوت‌اند. تفاوت پخت، جذب آب و کاربرد را یک‌جا بخوانید.",
+   "body_fa": "آجر سفالی در دمای حدود ۹۰۰ تا ۱۰۰۰ درجه پخته می‌شود و برای نماهای معماری کاربرد دارد؛ رنگ آن از خاک و پخت می‌آید و با گذر زمان تغییری نمی‌کند. این همان آجری است که چهره نماهای ایرانی را سال‌هاست زیبسته است.\n\nآجر نسوز در دمای بالاتر پخته می‌شود، تخلخل کمتری دارد و استحکام و مقاومت حرارتی بالاتری پیدا می‌کند. به همین دلیل علاوه بر نمای ساختمان، برای شومینه، کوره و دیوارهای پرتنش هم به کار می‌رود.\n\nقاعده ساده انتخاب این است: برای نما و فضای باز، سفالی معماری با جذب آب مناسب و رنگ دلخواه کافی و اقتصادی است؛ هر جا حرارت بالا، سایش یا رطوبت شدید در میان است، نسوز سرمایه‌گذاری هوشمندانه‌تری است.",
+   "date": "2026-10-02"
+  }
+ ]
+}

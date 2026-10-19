@@ -18,7 +18,7 @@ export default function InquiryForm({ productCode = null }) {
     setDone(false);
   };
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     const errs = {};
     if (!form.name.trim()) errs.name = t('contactPage.nameReq');
@@ -31,12 +31,29 @@ export default function InquiryForm({ productCode = null }) {
     setErrors(errs);
     if (Object.keys(errs).length) return;
 
+    /* Product inquiries land in the admin's Order Requests; general contact
+       form messages land in Consultations & Messages. LocalStorage is only a
+       fallback when the API is unreachable. */
     try {
-      const list = JSON.parse(localStorage.getItem('nemachin_inquiries') || '[]');
-      list.push({ ...form, productCode, date: new Date().toISOString() });
-      localStorage.setItem('nemachin_inquiries', JSON.stringify(list));
+      const endpoint = productCode ? '/api/public/order-request' : '/api/public/message';
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(
+          productCode
+            ? { name: form.name, phone: form.phone, email: form.email, product: productCode, message: form.message }
+            : { name: form.name, contact: form.phone || form.email, subject: productCode || '', body: form.message }
+        ),
+      });
+      if (!res.ok) throw new Error('api_failed');
     } catch {
-      /* storage unavailable */
+      try {
+        const list = JSON.parse(localStorage.getItem('nemachin_inquiries') || '[]');
+        list.push({ ...form, productCode, date: new Date().toISOString() });
+        localStorage.setItem('nemachin_inquiries', JSON.stringify(list));
+      } catch {
+        /* storage unavailable */
+      }
     }
     setDone(true);
     setForm({ name: '', phone: '', email: '', message: '' });

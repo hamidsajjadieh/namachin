@@ -26,7 +26,7 @@ export const PRODUCTS = [
       ar: 'آجر طيني للواجهات – أحمر كلاسيكي',
     },
     description: {
-      fa: 'آجر نیمای سفالی با پخت کامل و رنگ قرمز کلاسیک پایدار؛ انتخابی ابدی برای نماهای سنتی و مدرن. مناسب اقلیم‌های سرد و مرطوب.',
+      fa: 'آجر نمای سفالی با پخت کامل و رنگ قرمز کلاسیک پایدار؛ انتخابی ابدی برای نماهای سنتی و مدرن. مناسب اقلیم‌های سرد و مرطوب.',
       en: 'Fully fired fireclay facade brick with a stable classic red tone — a timeless choice for traditional and modern facades, suited to cold and humid climates.',
       ar: 'آجر طيني للواجهات محروق بالكامل بلون أحمر كلاسيكي ثابت؛ خيار خالد للواجهات التقليدية والحديثة، ومناسب للمناخات الباردة والرطبة.',
     },
@@ -226,7 +226,7 @@ export const PRODUCTS = [
       ar: 'بلاط آجر للواجهات – فيروزي',
     },
     description: {
-      fa: 'تایل نیمای ۲۹۵×۲۹۵ با رنگ فیروزه‌ای شاخص؛ جذب آب بسیار پایین و نصب شبکه‌ای دقیق برای نماهای معمارانه جسورانه.',
+      fa: 'تایل نمای ۲۹۵×۲۹۵ با رنگ فیروزه‌ای شاخص؛ جذب آب بسیار پایین و نصب شبکه‌ای دقیق برای نماهای معمارانه جسورانه.',
       en: 'A 295×295 facade tile in a signature turquoise — very low absorption and precise grid installation for bold architectural statements.',
       ar: 'بلاط واجهات ٢٩٥×٢٩٥ بلون فيروزي مميز؛ امتصاص منخفض جدًا وتركيب شبكي دقيق لواجهات معمارية جسورة.',
     },

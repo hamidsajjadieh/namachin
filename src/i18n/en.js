@@ -149,7 +149,7 @@ export const en = {
     phone: 'Factory Phone',
     email: 'Email',
     address: 'Factory Address',
-    addressValue: 'Barazandeh Street, Isfahan, Iran — Nemachin Production Complex',
+    addressValue: 'Km 6, Habibabad Road, Isfahan, Iran — Nemachin Production Complex',
   },
   productsPage: {
     title: 'Product Catalogue',

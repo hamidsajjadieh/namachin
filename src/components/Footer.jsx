@@ -31,7 +31,7 @@ const SOCIALS = [
 ];
 
 export default function Footer() {
-  const { t, fmt, lang } = useI18n();
+  const { t, lang } = useI18n();
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState(null);
 
@@ -52,7 +52,7 @@ export default function Footer() {
     setEmail('');
   };
 
-  const year = fmt(new Date().getFullYear());
+  const year = new Date().getFullYear(); // Latin digits, no thousands separator
 
   return (
     <footer className="footer">

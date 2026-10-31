@@ -51,19 +51,26 @@
   flex-shrink: 0;
 }
 
+/* Brand lockup image (transparent PNG) */
 .logo__mark {
-  inline-size: 42px;
-  block-size: 42px;
-  border-radius: 10px;
-  background: var(--navy);
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  block-size: 54px;
   flex-shrink: 0;
 }
 
-.header--clear .logo__mark {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(8px);
+.logo__mark img {
+  block-size: 100%;
+  inline-size: auto;
+  display: block;
+}
+
+.header--solid .logo__mark {
+  block-size: 48px;
+}
+
+.footer .logo__mark {
+  block-size: 66px;
 }
 
 .logo__name {

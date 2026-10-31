@@ -132,11 +132,13 @@ export default function Header() {
         <div className="container header__inner">
           <Link className="logo" to={to('', lang)} aria-label={t('brand.name')}>
             <span className="logo__mark">
-              <LogoMark />
-            </span>
-            <span className="logo__name">
-              {t('brand.name')}
-              <small>{t('brand.latin')}</small>
+              <img
+                src="/images/logo-nemachin.png"
+                alt=""
+                width="600"
+                height="360"
+                fetchpriority="high"
+              />
             </span>
           </Link>
 

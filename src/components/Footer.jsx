@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useI18n, to } from '../i18n';
 import { COMPANY } from '../data/company';
-import { LogoMark } from './Header';
 import {
   ClockIcon,
   InstagramIcon,
@@ -61,11 +60,13 @@ export default function Footer() {
           <div>
             <Link className="logo" to={to('', lang)} aria-label={t('brand.name')}>
               <span className="logo__mark">
-                <LogoMark />
-              </span>
-              <span className="logo__name">
-                {t('brand.name')}
-                <small>{t('brand.latin')}</small>
+                <img
+                  src="/images/logo-nemachin.png"
+                  alt=""
+                  width="600"
+                  height="360"
+                  loading="lazy"
+                />
               </span>
             </Link>
             <p className="footer__desc">{t('footer.desc')}</p>

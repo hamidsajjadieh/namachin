@@ -507,6 +507,11 @@ html[dir='rtl'] .logo__name small {
   object-fit: cover;
 }
 
+/* The poster is the video's own first frame — no zoom, so the reveal is seamless */
+.hero--video .hero__bg--poster img {
+  animation: none;
+}
+
 /* Video crossfade reveal — never show an empty rectangle */
 .hero--video .hero__bg--video {
   opacity: 0;
@@ -517,8 +522,22 @@ html[dir='rtl'] .logo__name small {
   opacity: 1;
 }
 
-.hero--video .hero__bg--video.is-failed {
-  display: none; /* poster image takes over */
+/* Static (reduced motion) / failed decode — poster or existing image takes over */
+.hero--video .hero__bg--fallback {
+  display: none;
+}
+
+.hero--video.is-static .hero__bg--video,
+.hero--video.is-failed .hero__bg--video {
+  display: none;
+}
+
+.hero--video.is-failed .hero__bg--poster {
+  display: none;
+}
+
+.hero--video.is-failed .hero__bg--fallback {
+  display: block;
 }
 
 /* Slim loading shimmer while the video buffers */
@@ -548,7 +567,8 @@ html[dir='rtl'] .logo__name small {
 }
 
 .is-ready .hero__loader,
-.is-failed .hero__loader {
+.hero--video.is-failed .hero__loader,
+.hero--video.is-static .hero__loader {
   display: none;
 }
 

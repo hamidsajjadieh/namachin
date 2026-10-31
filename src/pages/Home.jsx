@@ -37,9 +37,10 @@ export default function Home() {
     <>
       {/* ---------- Hero: scroll-scrubbed 3D video ---------- */}
       <ScrollHeroVideo
-        src="/videos/hero-scroll.mp4"
-        srcFallback="/videos/hero-scroll.webm"
-        poster={IMG.hero}
+        src="/videos/hero-scrub-desktop.mp4"
+        srcMobile="/videos/hero-scrub-mobile.mp4"
+        poster="/images/hero-scrub-poster.jpg"
+        fallbackImage={IMG.hero}
         alt={t('home.heroTitle')}
         footer={
           <div className="container hero__badges-inner">
